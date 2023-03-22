@@ -1,0 +1,127 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500;1,600;1,700&family=Poppins:ital,wght@0,400;0,500;0,600;0,700;1,400&display=swap');
+
+* {
+  font-family: 'Poppins', sans-serif;
+}
+
+.landing-page {
+  height: 100vh;
+  background-color: #0b7be7;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  /* background-size: cover;
+  background-image: url(../../../assets/image/background-new.png); */
+}
+
+.logo {
+  margin-bottom: 1em;
+}
+
+.footer {
+  display: flex;
+  width: 100%;
+  justify-content: center;
+  align-items: center;
+
+}
+
+.footer span {
+  font-size: 18px;
+  color: #b8b8b8;
+  margin-right: 1em;
+}
+
+.form {
+  background: #f5f5f5;
+  box-shadow: rgba(0, 0, 0, 0.16) 0px 10px 36px 0px, rgba(0, 0, 0, 0.06) 0px 0px 0px 1px;
+  border-radius: 10px;
+  padding: 2em 1.5em;
+  margin-bottom: 3em;
+}
+
+.field {
+  padding: 0.5em;
+}
+
+label {
+  display: block;
+  width: 10em;
+  padding-bottom: 3%;
+  color: #222831;
+  font-size: 1.2em;
+}
+
+input:not(.checkbox) {
+  width: 400px;
+  padding: 0 0.5em;
+  height: 37px;
+  border-radius: 5px;
+  font-size: 16px;
+  border: 1px solid #b8b8b8;
+  background-color: #f5f5f5;
+  color: #222831;
+}
+
+input:focus,
+select:focus {
+  outline: #b8b8b8;
+}
+
+#patients {
+  width: 420px;
+  padding: 0 0.5em;
+  height: 37px;
+  border-radius: 5px;
+  font-size: 16px;
+  border: 1px solid #b8b8b8;
+  background-color: #EFF5F5;
+}
+
+.checkbox {
+  width: 2em;
+  margin: 0%;
+}
+
+#pract-div {
+  display: flex;
+}
+
+#pract-div label {
+  padding-top: 0.8em;
+}
+
+.hide {
+  visibility: hidden;
+}
+
+.login {
+  align-items: center;
+  background-color: #1261ae;
+  border-radius: 5px;
+  color: #f5f5f5;
+  cursor: pointer;
+  font-size: 18px;
+  padding: 0.2em 4em;
+  margin-top: 0.8em;
+  transition: 0.3s;
+}
+
+.login:hover,
+.login:focus {
+  background-color: #06407a;
+  color: #ffffff;
+}
+
+.login:disabled {
+  background-color: #b8b8b8;
+  color: #eaeaea;
+}
+
+.buttons {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}

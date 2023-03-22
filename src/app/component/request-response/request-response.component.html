@@ -1,0 +1,15 @@
+<mat-card class="container">
+    <button mat-button>
+        <mat-icon (click)="reload()">refresh</mat-icon>
+      </button>
+    <section class="request">
+        <h3>Request</h3>
+        <mat-card><pre>{{ requests[0] }}</pre></mat-card>
+    </section>
+
+    <section class="response">
+        <h3>Response</h3>
+        
+        <mat-card class="code"><button (click)="copyResponse()">Copy</button><pre>{{ responses[0][0] | json }}</pre></mat-card>
+    </section>
+</mat-card>

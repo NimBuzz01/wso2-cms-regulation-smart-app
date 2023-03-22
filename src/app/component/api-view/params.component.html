@@ -1,0 +1,21 @@
+<div class="params" [formGroup]="form">
+
+  <div>
+    <p class="key" [attr.for]="param.key">{{param.key}}</p>
+    <p class="value" *ngIf="param.required; then thenBlock else elseBlock"></p>
+    <ng-template #thenBlock><input [formControlName]="param.key" [id]="param.key" type="text" required></ng-template>
+    <ng-template #elseBlock><input [formControlName]="param.key" [id]="param.key" type="text"></ng-template>
+  </div>
+
+  <!-- <input [formControlName]="param.key" [id]="param.key" type="text"> -->
+  <!-- <div class="inline-param"> -->
+
+  <!-- <ng-template [ngIf]="param.required; else elseBlock">
+      <td class="value" align="left"><input [formControlName]="param.key" [id]="param.key" type="text" required></td>
+    </ng-template>
+    <ng-template #elseBlock>
+      <td class="value" align="left"><input [formControlName]="param.key" [id]="param.key" type="text"></td>  
+    </ng-template> -->
+  <!-- </div> -->
+  <div class="errorMessage" *ngIf="!isValid">{{param.key}} is required</div>
+</div>

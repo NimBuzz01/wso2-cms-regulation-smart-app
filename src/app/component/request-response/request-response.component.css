@@ -1,0 +1,31 @@
+.container {
+  height: 88vh;
+  width: 50%;
+  position: absolute;
+  right: 0;
+  top: 6.5%;
+  z-index: 10;
+  background-color: #ffffff;
+}
+
+.request,
+.response {
+  padding: 2%;
+}
+
+h3 {
+  font-size: 16px;
+}
+
+mat-card {
+  overflow: scroll;  
+}
+
+.code {
+  border-color: darkblue;
+  border-width: 1px;
+}
+
+mat-card p {
+  font-family: "Courier New", Courier, monospace;
+}

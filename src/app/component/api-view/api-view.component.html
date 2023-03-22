@@ -1,0 +1,50 @@
+<main class="main">
+  <div class="sidebar">
+    <div class="sidebar-content">
+      <div class="sidebar-title">
+        API Explorer
+      </div>
+      <div class="fhir-select">
+        <label for="operationFormControl" class="fhir-label">FHIR Operation: </label>
+        <select id="operationFormControl" class="form-control" (change)="onChange()" [(ngModel)]="SelectedOperationId">
+          <option *ngFor="let operation of operations" value={{operation.id}}>
+            {{operation.name}}
+          </option>
+        </select>
+      </div>
+      <form (ngSubmit)="onSubmit()" [formGroup]="profileForm">
+        <button type="submit" class="submit-btn" [disabled]="!profileForm.valid">Search</button>
+        <!-- <div class="patient-select">
+          <label>Patient ID:</label>
+          <input class="pid_input" formControlName="patientId" [id]="patientId" type="text">          
+        </div> -->
+        <hr>
+        <div class="search-box">
+          <label class="search-label">Advanced Search</label>
+          <div class="search-fields">
+            <div *ngFor="let param of params">
+              <search-param [param]="param" [form]="profileForm"></search-param>
+            </div>
+          </div>
+        </div>
+      </form>
+    </div>
+  </div>
+
+  <div class="section">
+    <div class="section-content">
+      <div *ngIf="!practitionerMode" id="patient-id">
+        <label>Patient ID: </label> {{patientId}}
+      </div>
+      <div *ngIf="practitionerMode" class="patient-input">
+        <label id="patient-id">Patient ID:</label>
+        <input class="pid_input" formControlName="patientId" [id]="patientId" type="text">
+      </div>
+      <div class="json-col">
+        <div class="jsonview">
+          <ngx-json-viewer [json]="jsondata" [expanded]="true"></ngx-json-viewer>
+        </div>
+      </div>
+    </div>
+  </div>
+</main>

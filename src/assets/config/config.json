@@ -1,0 +1,8 @@
+{
+  "disableField": false,
+  "testPatients": [
+    { "name": "Brian Cox", "value": "briancox" },
+    { "name": "Marie Kovacek", "value": "mariekovacek" },
+    { "name": "John Doe", "value": "johndoe" }
+  ]
+}

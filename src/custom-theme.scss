@@ -1,0 +1,129 @@
+//Importing Roboto font
+@use '~@angular/material' as mat;
+@import url(https://fonts.googleapis.com/css?family=Roboto:100,100italic,300,300italic,400,400italic,500,500italic,700,700italic,900,900italic&subset=latin,latin-ext,cyrillic,cyrillic-ext,greek-ext,greek,vietnamese);
+@import url(https://fonts.googleapis.com/css?family=Roboto+Condensed:300,300italic,400,400italic,700,700italic&subset=latin,latin-ext,cyrillic-ext,cyrillic,greek-ext,greek,vietnamese);
+@import url(https://fonts.googleapis.com/css?family=Roboto+Slab:400,100,300,700&subset=latin,latin-ext,greek-ext,greek,vietnamese,cyrillic,cyrillic-ext);
+
+
+// Custom Theming for Angular Material
+// For more information: https://material.angular.io/guide/theming
+// Plus imports for other components in your app.
+
+// Include the common styles for Angular Material. We include this here so that you only
+// have to load a single css file for Angular Material in your app.
+// Be sure that you only ever include this mixin once!
+@include mat.core();
+
+mat.$blue-palette: (
+  50: #e5e9ef,
+  100: #bcc8d8,
+  200: #92a5bd,
+  300: #6883a3,
+  400: #476991,
+  500: #1f5182,
+  600: #174a79,
+  700: #0b406e,
+  800: #053762,
+  900: #03274A,
+  contrast: (
+    50: rgba(black, 0.87),
+    100: rgba(black, 0.87),
+    200: rgba(black, 0.87),
+    300: rgba(black, 0.87),
+    400: rgba(black, 0.87),
+    500: white,
+    600: white,
+    700: white,
+    800: rgba(white, 0.87),
+    900: rgba(white, 0.87),
+  )
+);
+
+mat.$orange-palette: (
+  50: #fef2e0,
+  100: #fdddb1,
+  200: #fcc87e,
+  300: #fab24d,
+  400: #f9a227,
+  500: #f89305,
+  600: #f48804,
+  700: #ee7904,
+  800: #e86a03,
+  900: #df5002,
+  contrast: (
+    50: rgba(black, 0.87),
+    100: rgba(black, 0.87),
+    200: rgba(black, 0.87),
+    300: rgba(black, 0.87),
+    400: rgba(black, 0.87),
+    500: white,
+    600: white,
+    700: white,
+    800: rgba(white, 0.87),
+    900: rgba(white, 0.87),
+  )
+);
+
+
+mat.$grey-palette: (
+  50: #f9f9f9,
+  100: #f6f6f6,
+  200: #f1f1f1,
+  300: #e6e6e6,
+  400: #c4c4c4,
+  500: #a5a5a5,
+  600: #7c7c7c,
+  700: #676767,
+  800: #484848,
+  900: #262626,
+  contrast: (
+    50: rgba(black, 0.87),
+    100: rgba(black, 0.87),
+    200: rgba(black, 0.87),
+    300: rgba(black, 0.87),
+    400: rgba(black, 0.87),
+    500: white,
+    600: white,
+    700: white,
+    800: rgba(white, 0.87),
+    900: rgba(white, 0.87),
+  )
+);
+
+// Define the palettes for your theme using the Material Design palettes available in palette.scss
+// (imported above). For each palette, you can optionally specify a default, lighter, and darker
+// hue. Available color palettes: https://material.io/design/color/
+
+// Custom theme
+$wso2-cms-regulation-smart-app-primary: mat.define-palette(mat.$blue-palette, 900);
+$wso2-cms-regulation-smart-app-accent: mat.define-palette(mat.$grey-palette, 50);
+
+// The warn palette is optional (defaults to red).
+$wso2-cms-regulation-smart-app-warn: mat.define-palette(mat.$red-palette);
+
+// Create the theme object. A theme consists of configurations for individual
+// theming systems such as "color" or "typography".
+
+$wso2-cms-regulation-smart-app-theme: mat.define-light-theme(
+  $wso2-cms-regulation-smart-app-primary,
+  $wso2-cms-regulation-smart-app-accent,
+  $wso2-cms-regulation-smart-app-warn
+);
+
+
+// Define a custom heading typography config
+$heading-font-family: "'Roboto', sans-serif";
+$typography: mat.define-typography-config(
+  $display-4: mat.define-typography-level(80px, $font-family: $heading-font-family, $font-weight: 500),
+  $display-3: mat.define-typography-level(60px, $font-family: $heading-font-family, $font-weight: 400),
+  $display-2: mat.define-typography-level(40px, $font-family: $heading-font-family, $font-weight: 300),
+  $display-1: mat.define-typography-level(30px, $font-family: $heading-font-family, $font-weight: 600),
+  $headline: mat.define-typography-level(60px, $font-family: $heading-font-family, $font-weight: 800),
+  $body-2: mat.define-typography-level(20px, $font-family: $heading-font-family),
+  $body-1: mat.define-typography-level(14px, $font-family: $heading-font-family),
+);
+
+// Include theme styles for core and each component used in your app.
+// Alternatively, you can import and @include the theme mixins for each component
+// that you are using.
+@include mat.all-component-themes($wso2-cms-regulation-smart-app-theme);

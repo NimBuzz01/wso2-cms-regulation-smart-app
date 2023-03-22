@@ -1,0 +1,22 @@
+<header class="header">
+  <div (click)="navigate()" class="logo">
+    <img src="assets/image/logo/logo.png" height="50px" width="auto" />
+  </div>
+  <div class="user-content">
+    <!-- <span class="account" (click)="toggleProfile()">
+        <mat-icon color="accent">account_circle</mat-icon>
+        <span class="username">{{ this.patient.name }}</span>
+      </span> -->
+    <div class="settings" (click)="toggleReqRes()">
+      <p>Raw View</p>
+      <mat-icon>miscellaneous_services</mat-icon>
+    </div>
+    <div class="logout" (click)="logout()">
+      <p>Log Out</p>
+      <mat-icon>logout</mat-icon>
+    </div>
+  </div>
+</header>
+
+<!-- <app-profile *ngIf="showProfile"></app-profile> -->
+<app-request-response *ngIf="showReqRes" class="sidebar"></app-request-response>
