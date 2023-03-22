@@ -1,54 +1,57 @@
 <section class="landing-page">
-  <section class="logo">
-    <img src="../../../assets/image/logo/logo.png">
-  </section>
 
-  <section class="form" [ngClass]="{'hide': disableField}">
-    <form [formGroup]="profileForm" (ngSubmit)="onSubmit()" class="formData">
-      <div class="field">
-        <label>Base FHIR URL :</label>
-        <input type="text" name="baseUrl" formControlName="baseUrl" required>
+  <section class="container">
+    <div class="info">
+      <div class="logo">
+        <img src="../../../assets/image/logo/logo.png">
       </div>
-      <div class="field">
-        <label>Consumer Key :</label>
-        <input type="text" name="consumerKey" formControlName="consumerKey" required>
+      <div class="info-text">
+        <p>Note : Make sure you are in an incognito window.</p>
+        <p>Having trouble? Refer to the <a href="www.google.com" target="_blank">documentation.</a></p>
       </div>
-      <div class="field">
-        <label>Consumer Secret :</label>
-        <input type="text" name="consumerSecret" formControlName="consumerSecret" required>
-      </div>
-      <div class="field">
-        <label>Redirect URI :</label>
-        <input type="text" name="redirectUri" placeholder="http://localhost:3000/api-view"
-          formControlName="redirectUri">
-      </div>
-      <div class="field">
-        <label for="patients">Select Test Patient :</label>
-        <select [(ngModel)]="selectedOption" name="patients" id="patients" formControlName="patient">
-          <option *ngFor="let option of options" value={{option.value}}>
-             {{option.name}}
-          </option>
-       </select>
-      </div>
-      <!-- <div class="field" id="pract-div">
-        <label>Practitioner Mode :</label>
-        <input class="checkbox" type="checkbox" name="practitionerMode" formControlName="practitionerMode">
-      </div> -->
-      <!-- <div class="field">
-        <p>Selected option: {{ selectedOption }}</p>
-      </div> -->
-      <div class="buttons">
-        <button type="submit" class="login"  mat-button>Connect</button>
-      </div>
-    </form>
+    </div>
+    <div class="form" [ngClass]="{'hide': disableField}">
+      <form [formGroup]="profileForm" (ngSubmit)="onSubmit()" class="formData">
+        <div class="field">
+          <label>Base FHIR URL :</label>
+          <input type="text" name="baseUrl" formControlName="baseUrl" required>
+        </div>
+        <div class="field">
+          <label>Consumer Key :</label>
+          <input type="text" name="consumerKey" formControlName="consumerKey" required>
+        </div>
+        <div class="field">
+          <label>Consumer Secret :</label>
+          <input type="text" name="consumerSecret" formControlName="consumerSecret" required>
+        </div>
+        <div class="field">
+          <label>Redirect URI :</label>
+          <input type="text" name="redirectUri" placeholder="http://localhost:3000/api-view"
+            formControlName="redirectUri">
+        </div>
+        <div class="field">
+          <label for="patients">Select Test Patient :</label>
+          <select [(ngModel)]="selectedOption" name="patients" id="patients" formControlName="patient">
+            <option *ngFor="let option of options" value={{option.value}}>
+              {{option.name}}
+            </option>
+          </select>
+        </div>
+        <!-- <div class="field" id="pract-div">
+          <label>Practitioner Mode :</label>
+          <input class="checkbox" type="checkbox" name="practitionerMode" formControlName="practitionerMode">
+        </div> -->
+        <div class="buttons">
+          <button type="submit" class="login" mat-button>Connect</button>
+        </div>
+      </form>
+    </div>
   </section>
 
   <section class="footer">
     <span>Powered by:</span>
     <span>
-      <img src="assets/image/logo/wso2-open-healthcare-logo-white.png" height="30px" width="auto" />
+      <img src="assets/image/logo/wso2-open-healthcare-logo.png" height="30px" width="auto" />
     </span>
   </section>
-  <!-- <section class="buttons">
-  </section> -->
 </section>

@@ -92,6 +92,7 @@
   font-size: 16px;
   transition: 0.3s;
   cursor: pointer;
+  border: none;
 }
 
 .submit-btn:hover {
