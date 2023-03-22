@@ -36,10 +36,19 @@ export class LandingPageComponent implements OnInit {
   ) {}
 
   async onSubmit() {
-    const baseUrl = this.profileForm.value.baseUrl;
-    const consumerKey = this.profileForm.value.consumerKey;
-    const consumerSecret = this.profileForm.value.consumerSecret;
-    let redirectUri = 'http://localhost:3000/api-view';
+    let baseUrl = config.baseUrl;
+    if (this.profileForm.value.baseUrl != null) {
+      baseUrl = this.profileForm.value.baseUrl;
+    }
+    let consumerKey = config.consumerKey;
+    if (this.profileForm.value.consumerKey != null) {
+      consumerKey = this.profileForm.value.consumerKey;
+    }
+    let consumerSecret = config.consumerSecret;
+    if (this.profileForm.value.consumerSecret != null) {
+      consumerSecret = this.profileForm.value.consumerSecret;
+    }
+    let redirectUri = config.redirectUri;
     if (this.profileForm.value.redirectUri != null) {
       redirectUri = this.profileForm.value.redirectUri;
     }

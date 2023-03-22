@@ -1,5 +1,9 @@
 {
   "disableField": false,
+  "baseUrl":"",
+  "consumerKey":"",
+  "consumerSecret":"",
+  "redirectUri":"http://localhost:3000/api-view",
   "testPatients": [
     { "name": "Brian Cox", "value": "briancox" },
     { "name": "Marie Kovacek", "value": "mariekovacek" },
